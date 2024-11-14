@@ -1,0 +1,46 @@
+---@meta
+
+---The application configuration table
+---@class ncine.app_configuration
+---@field data_path string # The data path
+---@field log_file string # The file used when logging to file is enabled
+---@field console_log_level ncine.log_level ncine.log_level # The minimum level that a log message needs to have to be printed in the console
+---@field file_log_level ncine.log_level # The minimum level that a log message needs to have to be written to the log file
+---@field log_interval number # The interval for frame timer accumulation average and log
+---@field resolution ncine.vec2 # The window size or the resolution of the closest video mode if going full screen.<br>If either `x` or `y` are zero or negative, the application will go in full screen at the current screen resolution.
+---@field refresh_rate number # The refresh rate of the screen mode used to go in full screen.<br>If it is zero or negative, when requesting a full screen mode the current refresh rate will not be changed.
+---@field window_position ncine.vec2 # The window position coordinates in the virtual screen made of all the connected monitors
+---@field full_screen boolean # The flag is `true` if the application is going to be in full screen mode
+---@field resizable boolean # The flag is `true` if the window is going to be resizable
+---@field window_scaling boolean # The flag is `true` if the window size is automatically scaled according to the display factor
+---@field frame_limit integer # The maximum number of frames to render per second or 0 for no limit
+---@field window_title string # The window title
+---@field window_icon string # The window icon filename
+---@field buffer_mapping boolean # The flag is `true` if mapping is used to update OpenGL buffers
+---@field defer_shader_queries boolean # The flag is `true` when error checking and introspection of shader programs are deferred to first use
+---@field fixed_batch_size integer # Fixed size of render commands to be collected for batching on Emscripten and ANGLE
+---@field binary_shader_cache boolean # The flag is `true` if the shader cache is enabled to load and save binary shader programs
+---@field shader_cache_dirname string # The directory name (not the complete path) for the binary shaders cache
+---@field compile_batched_shaders_twice boolean # The flag is `true` if, on devices with UBOs smaller than 64 KB, batched shaders will be compiled twice to identify their maximum batch size
+---@field vbo_size integer # The maximum size in bytes for each VBO collecting geometry data
+---@field ibo_size integer # The maximum size in bytes for each IBO collecting index data
+---@field vao_pool_size integer # The maximum size for the pool of VAOs
+---@field rendercommand_pool_size integer # The initial size for the pool of render commands
+---@field output_audio_frequency integer # The output frequency of the audio system
+---@field mono_audio_sources integer # The number of mono audio sources
+---@field stereo_audio_sources integer # The number of stereo audio sources
+---@field debug_overlay boolean # The flag is `true` if the debug overlay is enabled
+---@field audio boolean # The flag is `true` if the audio subsystem is enabled
+---@field threads boolean # The flag is `true` if the threading subsystem is enabled
+---@field scenegraph boolean # The flag is `true` if the scenegraph based rendering is enabled
+---@field vsync boolean # The flag is `true` if the vertical synchronization is enabled
+---@field gl_debug_context boolean # The flag is `true` if the OpenGL debug context is enabled
+---@field console_colors boolean # The flag is `true` if console log messages should use colors
+---@field opengl_core_profile boolean # True if the OpenGL profile is going to be core (read-only)
+---@field opengl_forward_compatible boolean # True if the OpenGL context is going to be forward compatible (read-only)
+---@field opengl_major_version integer # The major version number of the OpenGL context (read-only)
+---@field opengl_minor_version integer # The minor version number of the OpenGL context (read-only)
+---@field profile_text_update_time number # The update time in seconds for the profile text nodes (read-only)
+---@field argc integer # The number of arguments passed on the command line
+---@field argv string[] # The array of arguments passed on the command line
+ncine.app_onfiguration = {}
