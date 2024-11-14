@@ -1,0 +1,53 @@
+name: 'CodeQL'
+
+env:
+  LUALS_VERSION: 3.12.0
+
+on: [push, workflow_dispatch]
+
+jobs:
+  analyze:
+    name: 'Lua Documentation'
+    runs-on: 'ubuntu-22.04'
+
+    strategy:
+      fail-fast: false
+
+    steps:
+    - name: 'Checkout Repository'
+      uses: actions/checkout@v4
+
+    - name: 'Download LuaLS'
+      run: |
+        curl -fsSL https://github.com/LuaLS/lua-language-server/releases/download/$LUALS_VERSION/lua-language-server-$LUALS_VERSION-linux-x64.tar.gz -o lua-language-server-$LUALS_VERSION-linux-x64.tar.gz
+        mkdir lua-language-server-$LUALS_VERSION-linux-x64
+        tar xvpzf lua-language-server-$LUALS_VERSION-linux-x64.tar.gz -C lua-language-server-$LUALS_VERSION-linux-x64
+        rm lua-language-server-$LUALS_VERSION-linux-x64.tar.gz
+
+    - name: 'Export Documentation'
+      run: |
+        cd lua-language-server-$LUALS_VERSION-linux-x64
+        mkdir docs
+        ./bin/lua-language-server --loglevel=trace --doc "../nCine-LuaCATS/" --doc_out_path "docs"
+        mv docs/doc.md ../nCine_Lua_API.md
+
+    - name: 'Convert Markdown to HTML'
+      uses: jaywcjlove/markdown-to-html-cli@main
+      with:
+        source: nCine_Lua_API.md
+        output: nCine_Lua_API.html
+        github-corners: https://github.com/jaywcjlove/markdown-to-html-cli
+        favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>
+
+    - name: 'Push Documentation'
+      run: |
+        git clone https://$PUBLIC_REPO_TOKEN@github.com/nCine/docs.git >/dev/null 2>&1
+        cd docs
+
+        git rm lua_api_master.html
+        cp -p nCine_Lua_API.html lua_api_master.html
+        git add lua_api_master.html
+
+        git commit --amend -m "Initial commit" || git commit -m "Initial commit"
+        git push --force || git push --set-upstream origin master
+

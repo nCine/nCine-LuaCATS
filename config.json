@@ -1,0 +1,9 @@
+{
+	"$schema" : "https://raw.githubusercontent.com/LuaLS/LLS-Addons/main/schemas/addon_config.schema.json",
+	"name" : "nCine",
+	"description": "Definitions for the nCine, a cross-platform 2D game framework with an emphasis on performance",
+	"words" : ["require[%s%(\"']+ncine[%)\"']"],
+	"settings" : {
+		"Lua.runtime.version" : "Lua 5.4",
+	}
+}
