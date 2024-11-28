@@ -7,5 +7,5 @@
   },
   "hint.enable": false,
   "runtime.version": "Lua 5.4",
-  "workspace.library": ["./"],
+  "workspace.library": ["./"]
 }

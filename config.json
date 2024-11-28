@@ -4,6 +4,6 @@
 	"description": "Definitions for the nCine, a cross-platform 2D game framework with an emphasis on performance",
 	"words" : ["require[%s%(\"']+ncine[%)\"']"],
 	"settings" : {
-		"Lua.runtime.version" : "Lua 5.4",
+		"Lua.runtime.version" : "Lua 5.4"
 	}
 }
