@@ -15,7 +15,7 @@ ncine.text_alignment = {
 ---@class ncine.textnode: ncine.drawable_node
 ncine.textnode = {}
 
----Constructs a textnode object with a parent scene node, a font, and a maximum text string length
+---Constructs a textnode object with a parent scene node, a font, and a maximum text string length.
 ---
 ---Don't forget to call [delete](lua://ncine.textnode.delete) when you are done with it!
 ---@param parent? scenenodeObj # The parent scenenode
@@ -25,7 +25,7 @@ ncine.textnode = {}
 ---@nodiscard
 function ncine.textnode.new(parent, font, max_string_length) end
 
----Constructs a new textnode object as a clone of the specified one
+---Constructs a new textnode object as a clone of the specified one.
 ---
 ---Don't forget to call [delete](lua://ncine.textnode.delete) when you are done with it!
 ---@param textnode textnodeObj # The textnode object to be cloned

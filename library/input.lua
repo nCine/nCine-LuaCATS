@@ -15,7 +15,7 @@
 ---@field y integer # Pointer position on the Y axis
 ---@field left_pressed boolean # It is `true` if the left mouse button is pressed
 ---@field middle_pressed boolean # It is `true` if the middle mouse button is pressed
----@field right_pressed boolean # TIt is `true` if the right mouse button is pressed
+---@field right_pressed boolean # It is `true` if the right mouse button is pressed
 ---@field fourth_pressed boolean # It is `true` if the fourth mouse button is pressed
 ---@field fifth_pressed boolean # It is `true` if the fifth mouse button is pressed
 mouse_state = {}
@@ -54,7 +54,7 @@ function ncine.input.key_state() end
 ---@return boolean
 function ncine.input.joy_present(joy_id) end
 
----joy_id
+---Returns the name of the specified joystick
 ---@param joy_id integer
 ---@return string
 function ncine.input.joy_name(joy_id) end

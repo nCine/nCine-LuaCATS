@@ -7,7 +7,7 @@
 ---@class ncine.shaderstate
 ncine.shaderstate = {}
 
----Constructs a shaderstate object and assigns to it a node and a shader
+---Constructs a shaderstate object and assigns to it a node and a shader.
 ---
 ---Don't forget to call [delete](lua://ncine.shaderstate.delete) when you are done with it!
 ---@param node drawablenodeObj
@@ -27,8 +27,8 @@ function ncine.shaderstate.get_node(shaderstate) end
 
 ---Sets the drawable node affected by the shader state
 ---@param shaderstate shaderstateObj
----@param node drawablenodeObj?
----@---@return boolean # True if the node has been changed
+---@param node? drawablenodeObj
+---@return boolean # True if the node has been changed
 function ncine.shaderstate.set_node(shaderstate, node) end
 
 ---Return the associated custom shader
@@ -38,7 +38,7 @@ function ncine.shaderstate.get_shader(shaderstate) end
 
 ---Sets the associated custom shader
 ---@param shaderstate shaderstateObj
----@param shader shaderObj?
+---@param shader? shaderObj
 ---@return boolean # True if the shader has been changed
 function ncine.shaderstate.set_shader(shaderstate, shader) end
 
@@ -49,7 +49,7 @@ function ncine.shaderstate.reset_shader(shaderstate) end
 ---Assigns a texture to the specified texture unit
 ---@param shaderstate shaderstateObj
 ---@param unit integer
----@param texture textureObj?
+---@param texture? textureObj
 ---@return boolean # True if the texture has been assigned
 function ncine.shaderstate.set_texture(shaderstate, unit, texture) end
 

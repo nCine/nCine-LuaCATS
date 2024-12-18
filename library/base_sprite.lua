@@ -20,7 +20,7 @@ function ncine.base_sprite.get_texture(sprite) end
 
 ---Sets the texture object
 ---@param sprite basespriteObj
----@param texture textureObj?
+---@param texture? textureObj
 function ncine.base_sprite.set_texture(sprite, texture) end
 
 ---Triggers a texture update without setting a new texture

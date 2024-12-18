@@ -34,7 +34,7 @@ ncine.depth_stencil_format = {
 ---@class ncine.viewport
 ncine.viewport = {}
 
----Constructs a viewport object
+---Constructs a viewport object.
 ---
 ---Don't forget to call [delete](lua://ncine.viewport.delete) when you are done with it!
 ---@return viewportObj # A new viewport object
@@ -59,7 +59,7 @@ function ncine.viewport.get_texture(viewport, index) end
 ---Adds or removes a texture at the specified viewport's FBO color attachment index
 ---@param viewport viewportObj
 ---@param index integer
----@param texture textureObj?
+---@param texture? textureObj
 ---@return boolean # True if a texture has been added or removed successfully
 function ncine.viewport.set_texture(viewport, index, texture) end
 

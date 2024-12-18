@@ -15,9 +15,9 @@ ncine.font_render_mode = {
 ---@class ncine.font
 ncine.font = {}
 
----Constructs the font object from an AngelCode's `FNT` file and a texture file
+---Constructs the font object from an AngelCode's `FNT` file and a texture file.
 ---
----If the `texture_file` parameter is an empty string, then a texture with the same name as the `FNT` file is searched in the same path
+---If the `texture_file` parameter is an empty string, then a texture with the same name as the `FNT` file is searched in the same path.
 ---
 ---Don't forget to call [delete](lua://ncine.font.delete) when you are done with it!
 ---@param fnt_file string # The path to a `FNT` file

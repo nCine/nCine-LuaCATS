@@ -7,7 +7,7 @@
 ---@class ncine.audio_effect_slot
 ncine.audio_effect_slot = {}
 
----Constructs an audio effect slot object
+---Constructs an audio effect slot object.
 ---
 ---Don't forget to call [delete](lua://ncine.audio_effect_slot.delete) when you are done with it!
 ---@return audioeffectslotObj # A new audio effect slot object
@@ -33,14 +33,14 @@ function ncine.audio_effect_slot.get_gain(audio_effect_slot) end
 ---@param gain number
 function ncine.audio_effect_slot.set_gain(audio_effect_slot, gain) end
 
----Returns the state of the auxilary slot send auto flag
+---Returns the state of the auxilary slot send auto flag.
 ---
 ---The property is used to enable or disable automatic send adjustments based on the physical positions of the sources and the listener.
 ---@param audio_effect_slot audioeffectslotObj
 ---@return boolean
 function ncine.audio_effect_slot.get_aux_send_auto(audio_effect_slot) end
 
----Sets the state of the auxilary slot send auto flag
+---Sets the state of the auxilary slot send auto flag.
 ---
 ---The property is used to enable or disable automatic send adjustments based on the physical positions of the sources and the listener.
 ---@param audio_effect_slot audioeffectslotObj

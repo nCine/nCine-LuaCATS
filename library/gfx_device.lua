@@ -15,7 +15,7 @@ video_mode = {}
 ---@field name string # The monitor name
 ---@field position ncine.vec2 # The position of the monitor's viewport on the virtual screen
 ---@field dpi ncine.vec2 # The horizontal and vertical dots per inch
----@field scale ncine.vec2 #The content scale factor
+---@field scale ncine.vec2 # The content scale factor
 ---@field num_video_modes integer # The number of video modes in the array
 ---@field video_modes video_mode[] # The array of supported video modes
 monitor = {}
@@ -24,7 +24,7 @@ monitor = {}
 ---@class ncine.gfx_device
 ncine.gfx_device = {}
 
----Sets the number of vertical blanks to occur before a buffer swap
+---Sets the number of vertical blanks to occur before a buffer swap.
 ---
 ---An interval of `-1` will enable adaptive v-sync if available.
 ---@param interval integer
@@ -79,34 +79,34 @@ function ncine.gfx_device.get_resolution() end
 ---@return number
 function ncine.gfx_device.get_aspect_ratio() end
 
----Sets the window size with a `ncine.vec2`
+---Sets the window size with a `ncine.vec2`.
 ---
 ---If the application is in full screen this method will have no effect.
 ---@param size ncine.vec2
 function ncine.gfx_device.set_window_size(size) end
 
----Sets the window size with two integers
+---Sets the window size with two integers.
 ---
 ---If the application is in full screen this method will have no effect.
 ---@param width integer
 ---@param height integer
 function ncine.gfx_device.set_window_size(width, height) end
 
----Returns the window width in pixels
+---Returns the window width in pixels.
 ---
----It may differs from `width()` on HiDPI screens
+---It may differs from `width()` on HiDPI screens.
 ---@return integer
 function ncine.gfx_device.get_drawable_width() end
 
----Returns the window height in pixels
+---Returns the window height in pixels.
 ---
----It may differs from `width()` on HiDPI screens
+---It may differs from `width()` on HiDPI screens.
 ---@return integer
-function ncine.gfx_device.get_hdrawable_eight() end
+function ncine.gfx_device.get_drawable_height() end
 
----Returns the window resolution in pixels as a `ncine.vec2`
+---Returns the window resolution in pixels as a `ncine.vec2`.
 ---
----It may differs from `width()` on HiDPI screens
+---It may differs from `width()` on HiDPI screens.
 ---@return ncine.vec2
 function ncine.gfx_device.get_drawable_resolution() end
 
@@ -125,9 +125,9 @@ function ncine.gfx_device.flash_window() end
 ---@return integer
 function ncine.gfx_device.num_monitors() end
 
----Returns the array index of the primary monitor
+---Returns the array index of the primary monitor.
 ---
----This is usually the monitor where elements like the task bar or global menu bar are located
+---This is usually the monitor where elements like the task bar or global menu bar are located.
 ---@return integer
 function ncine.gfx_device.get_primary_monitor_index() end
 
@@ -144,7 +144,7 @@ function ncine.gfx_device.get_monitor(index) end
 ---@return video_mode
 function ncine.gfx_device.get_current_video_mode() end
 
----Sets the video mode that will be used in full screen by the monitor that hosts the window
+---Sets the video mode that will be used in full screen by the monitor that hosts the window.
 ---
 ---Call this method **before** enabling full screen.
 ---@param mode_index integer

@@ -28,7 +28,7 @@ mesh_sprite_vertex_notexture = {}
 ---@class ncine.mesh_sprite: ncine.base_sprite
 ncine.mesh_sprite = {}
 
----Constructs a mesh sprite object with a parent scene node, a texture, and position components
+---Constructs a mesh sprite object with a parent scene node, a texture, and position components.
 ---
 ---Don't forget to call [delete](lua://ncine.mesh_sprite.delete) when you are done with it!
 ---@param parent? scenenodeObj # The parent scenenode
@@ -39,7 +39,7 @@ ncine.mesh_sprite = {}
 ---@nodiscard
 function ncine.mesh_sprite.new(parent, texture, x, y) end
 
----Constructs a mesh sprite object with a parent scene node, a texture, and a position vector
+---Constructs a mesh sprite object with a parent scene node, a texture, and a position vector.
 ---
 ---Don't forget to call [delete](lua://ncine.mesh_sprite.delete) when you are done with it!
 ---@param parent? scenenodeObj # The parent scenenode
@@ -49,7 +49,7 @@ function ncine.mesh_sprite.new(parent, texture, x, y) end
 ---@nodiscard
 function ncine.mesh_sprite.new(parent, texture, pos) end
 
----Constructs a new mesh sprite object as a clone of the specified one
+---Constructs a new mesh sprite object as a clone of the specified one.
 ---
 ---Don't forget to call [delete](lua://ncine.mesh_sprite.delete) when you are done with it!
 ---@param sprite meshspriteObj # The sprite object to be cloned

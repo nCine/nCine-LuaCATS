@@ -24,7 +24,7 @@ audio_filter_properties = {}
 ---@class ncine.audio_filter
 ncine.audio_filter = {}
 
----Constructs an audio filter object
+---Constructs an audio filter object.
 ---
 ---Don't forget to call [delete](lua://ncine.audio_filter.delete) when you are done with it!
 ---@return audiofilterObj # A new audio filter object
@@ -50,7 +50,7 @@ function ncine.audio_filter.get_filter_id(audio_filter) end
 ---@param properties audio_filter_properties
 function ncine.audio_filter.apply_properties(audio_filter, properties) end
 
----Returns a table with the default filter type and properties
+---Returns a table with the default filter type and properties.
 ---
 ---The table is only returned as a reference.
 ---@return audio_filter_properties

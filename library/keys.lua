@@ -251,7 +251,7 @@ ncine.keysym = {
 ---Keymods
 ---@enum ncine.keymod
 ncine.keymod = {
-	NOE = 0,
+	NONE = 0,
 
 	-- Common keymods
 	SHIFT = 1,

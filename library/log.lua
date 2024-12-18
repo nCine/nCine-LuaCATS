@@ -13,7 +13,7 @@ ncine.log_level = {
 	FATAL = 6,
 }
 
----The logging class
+---The table containing logging related functions
 ---@class ncine.log
 ncine.log = {}
 

@@ -65,7 +65,7 @@ function ncine.audio_device.get_num_players() end
 ---@return audioplayerObj?
 function ncine.audio_device.get_player(index) end
 
----Pauses every player currently playing
+---Pauses every player currently playing.
 ---
 ---Paused players can be resumed with `resume_players()`.
 function ncine.audio_device.pause_players() end
@@ -76,12 +76,12 @@ function ncine.audio_device.stop_players() end
 ---Resumes all and only the players that were paused by a `pause_players()` call
 function ncine.audio_device.resume_players() end
 
----Pauses all audio device activities using an OpenAL-soft extension (if available)
+---Pauses all audio device activities using an OpenAL-soft extension (if available).
 ---
 ---If the extension is not available, all players are paused.
 function ncine.audio_device.pause_device() end
 
----Resumes all audio device activities using an OpenAL-soft extension (if available)
+---Resumes all audio device activities using an OpenAL-soft extension (if available).
 ---
 ---If the extension is not available, all paused players resume playing.
 function ncine.audio_device.resume_device() end

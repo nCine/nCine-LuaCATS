@@ -9,6 +9,7 @@
 ---@field right number
 ---@field top number
 ---@field bottom number
+camera_projection_values = {}
 
 ---A camera view values table
 ---@class camera_view_values
@@ -16,12 +17,13 @@
 ---@field y number
 ---@field rotation number
 ---@field scale number
+camera_view_values = {}
 
 ---The table containing camera related functions
 ---@class ncine.camera
 ncine.camera = {}
 
----Constructs a camera object
+---Constructs a camera object.
 ---
 ---Don't forget to call [delete](lua://ncine.camera.delete) when you are done with it!
 ---@return cameraObj # A new camera object

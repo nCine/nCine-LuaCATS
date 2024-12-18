@@ -3,7 +3,7 @@
 ---The light user data of a particle affector object
 ---@class affectorObj: lightuserdata
 
----file and directory permission modes
+---Particle affector types
 ---@enum ncine.affector_type
 ncine.affector_type = {
 	COLOR = 0,
@@ -13,7 +13,7 @@ ncine.affector_type = {
 	VELOCITY = 5,
 }
 
----A step of a `COLOR` particle affector
+---A step of a `COLOR` particle affector.
 ---
 ---It is an array of two elements, an age value and a color.
 ---@class (exact) affector_color_step
@@ -21,7 +21,7 @@ ncine.affector_type = {
 ---@field [2] ncine.color # Color
 affector_color_step = {}
 
----A step of a `SIZE` particle affector
+---A step of a `SIZE` particle affector.
 ---
 ---It is an array of two elements, an age value and a uniform scale factor.
 ---@class (exact) affector_size_step
@@ -29,7 +29,7 @@ affector_color_step = {}
 ---@field [2] number # Scale
 affector_size_step_factor = {}
 
----A step of a `SIZE` particle affector
+---A step of a `SIZE` particle affector.
 ---
 ---It is an array of two elements, an age value and a scale vector for the two dimensions.
 ---@class (exact) affector_size_step
@@ -37,7 +37,7 @@ affector_size_step_factor = {}
 ---@field [2] ncine.vec2 # Scale
 affector_size_step_vector = {}
 
----A step of a `ROTATION` particle affector
+---A step of a `ROTATION` particle affector.
 ---
 ---It is an array of two elements, an age value and an angle in degrees.
 ---@class (exact) affector_rotation_step
@@ -45,15 +45,15 @@ affector_size_step_vector = {}
 ---@field [2] number # Angle
 affector_rotation_step = {}
 
----A step of a `POSITION` particle affector
+---A step of a `POSITION` particle affector.
 ---
 ---It is an array of two elements, an age value and a position vector.
 ---@class (exact) affector_position_step
 ---@field [1] number # Age
----@field [2] ncine.vec2 #position
+---@field [2] ncine.vec2 # Position
 affector_position_step = {}
 
----A step of a `VELOCITY` particle affector
+---A step of a `VELOCITY` particle affector.
 ---
 ---It is an array of two elements, an age value and a velocity vector.
 ---@class (exact) affector_velocity_step
@@ -134,14 +134,14 @@ function ncine.particle_affector.add_color_step(affector, age, color) end
 ---@param alpha number
 function ncine.particle_affector.add_color_step(affector, age, red, green, blue, alpha) end
 
----Returns a base scale factor that will be multiplied by all size steps
+---Returns a base scale factor that will be multiplied by all size steps.
 ---
 ---The affector type should be `SIZE` or the function will return `nil`.
 ---@param affector affectorObj
 ---@return ncine.vec2?
 function ncine.particle_affector.get_base_scale(affector) end
 
----Sets a base scale factor that will be multiplied by all size steps
+---Sets a base scale factor that will be multiplied by all size steps.
 ---
 ---The affector type should be `SIZE` or the function will do nothing.
 ---@param affector affectorObj

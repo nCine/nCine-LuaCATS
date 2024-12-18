@@ -51,6 +51,7 @@ function ncine.vec2.get_max(rect) end
 ---@param rect ncine.rect
 ---@param x number
 ---@param y number
+---@return ncine.rect
 function ncine.vec2.set_center(rect, x, y) end
 
 ---Sets rectangle minimum and maximum coordinates

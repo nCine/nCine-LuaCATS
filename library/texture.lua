@@ -36,7 +36,7 @@ ncine.tex_wrap = {
 ---@class ncine.texture
 ncine.texture = {}
 
----Constructs a texture object from an image file
+---Constructs a texture object from an image file.
 ---
 ---Don't forget to call [delete](lua://ncine.texture.delete) when you are done with it!
 ---@param filename string # The path to an image file
@@ -44,7 +44,7 @@ ncine.texture = {}
 ---@nodiscard
 function ncine.texture.new(filename) end
 
----Constructs a blank texture
+---Constructs a blank texture.
 ---
 ---Don't forget to call [delete](lua://ncine.texture.delete) when you are done with it!
 ---@param name string # The name for the new texture object
@@ -55,7 +55,7 @@ function ncine.texture.new(filename) end
 ---@nodiscard
 function ncine.texture.new_init(name, format, mip_count, size) end
 
----Constructs a blank texture
+---Constructs a blank texture.
 ---
 ---Don't forget to call [delete](lua://ncine.texture.delete) when you are done with it!
 ---@param name string # The name for the new texture object

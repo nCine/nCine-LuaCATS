@@ -4,7 +4,7 @@
 ---@class ncine.app_configuration
 ---@field data_path string # The data path
 ---@field log_file string # The file used when logging to file is enabled
----@field console_log_level ncine.log_level ncine.log_level # The minimum level that a log message needs to have to be printed in the console
+---@field console_log_level ncine.log_level # The minimum level that a log message needs to have to be printed in the console
 ---@field file_log_level ncine.log_level # The minimum level that a log message needs to have to be written to the log file
 ---@field log_interval number # The interval for frame timer accumulation average and log
 ---@field resolution ncine.vec2 # The window size or the resolution of the closest video mode if going full screen.<br>If either `x` or `y` are zero or negative, the application will go in full screen at the current screen resolution.
@@ -43,4 +43,4 @@
 ---@field profile_text_update_time number # The update time in seconds for the profile text nodes (read-only)
 ---@field argc integer # The number of arguments passed on the command line
 ---@field argv string[] # The array of arguments passed on the command line
-ncine.app_onfiguration = {}
+ncine.app_configuration = {}

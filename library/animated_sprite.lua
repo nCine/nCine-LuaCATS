@@ -7,7 +7,7 @@
 ---@class ncine.animated_sprite: ncine.sprite
 ncine.animated_sprite = {}
 
----Constructs an animated sprite object with a parent scene node, a texture, and position components
+---Constructs an animated sprite object with a parent scene node, a texture, and position components.
 ---
 ---Don't forget to call [delete](lua://ncine.animated_sprite.delete) when you are done with it!
 ---@param parent? scenenodeObj # The parent scenenode
@@ -18,7 +18,7 @@ ncine.animated_sprite = {}
 ---@nodiscard
 function ncine.animated_sprite.new(parent, texture, x, y) end
 
----Constructs an animated sprite object with a parent scene node, a texture, and a position vector
+---Constructs an animated sprite object with a parent scene node, a texture, and a position vector.
 ---
 ---Don't forget to call [delete](lua://ncine.animated_sprite.delete) when you are done with it!
 ---@param parent? scenenodeObj # The parent scenenode
@@ -28,7 +28,7 @@ function ncine.animated_sprite.new(parent, texture, x, y) end
 ---@nodiscard
 function ncine.animated_sprite.new(parent, texture, pos) end
 
----Constructs a new animated sprite object as a clone of the specified one
+---Constructs a new animated sprite object as a clone of the specified one.
 ---
 ---Don't forget to call [delete](lua://ncine.animated_sprite.delete) when you are done with it!
 ---@param sprite animatedspriteObj # The sprite object to be cloned
@@ -50,7 +50,7 @@ function ncine.animated_sprite.is_paused(sprite) end
 ---@param paused boolean
 function ncine.animated_sprite.set_paused(sprite, paused) end
 
----Adds a new animation
+---Adds a new animation.
 ---
 ---An example of a valid animation table is the following:
 ---```lua
