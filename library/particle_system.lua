@@ -3,9 +3,9 @@
 ---The light user data of a particle system object
 ---@class particlesystemObj: scenenodeObj
 
----An initializer table with random ranges used to emit particles
+---An initializer table with random ranges used to emit particles.
 ---
----Each field can be thje precise value, or an array of two elements, to define a minimum and a maximum.
+---Each field can be the precise value, or an array of two elements, to define a minimum and a maximum.
 ---@class particle_initializer
 ---@field amount number|number[]
 ---@field life number|number[]
@@ -18,7 +18,7 @@ particle_initializer = {}
 ---@class ncine.particle_system: ncine.scenenode
 ncine.particle_system = {}
 
----Constructs a particle system
+---Constructs a particle system.
 ---
 ---Don't forget to call [delete](lua://ncine.particle_system.delete) when you are done with it!
 ---@param parent? scenenodeObj # The parent scenenode
@@ -29,7 +29,7 @@ ncine.particle_system = {}
 ---@nodiscard
 function ncine.particle_system.new(parent, count, texture, tex_rect) end
 
----Constructs a new particle system object as a clone of the specified one
+---Constructs a new particle system object as a clone of the specified one.
 ---
 ---Don't forget to call [delete](lua://ncine.particle_system.delete) when you are done with it!
 ---@param particle_system particlesystemObj # The particle system object to be cloned

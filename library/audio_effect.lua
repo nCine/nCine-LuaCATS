@@ -26,7 +26,7 @@ ncine.audio_effect_type = {
 ---@class ncine.audio_effect
 ncine.audio_effect = {}
 
----Constructs an audio effect object
+---Constructs an audio effect object.
 ---
 ---Don't forget to call [delete](lua://ncine.audio_effect.delete) when you are done with it!
 ---@return audioeffectObj # A new audio effect object

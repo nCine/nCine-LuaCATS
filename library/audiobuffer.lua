@@ -7,7 +7,7 @@
 ---@class ncine.audiobuffer
 ncine.audiobuffer = {}
 
----Constructs an audio buffer object from an audio file
+---Constructs an audio buffer object from an audio file.
 ---
 ---Don't forget to call [delete](lua://ncine.audiobuffer.delete) when you are done with it!
 ---@param filename string # The path to an audio file

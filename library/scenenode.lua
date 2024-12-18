@@ -24,7 +24,7 @@ function ncine.scenenode.get_parent(node) end
 
 ---Sets the parent node
 ---@param node scenenodeObj
----@param parent scenenodeObj?
+---@param parent? scenenodeObj
 ---@return boolean # `true` if the parent has been set
 function ncine.scenenode.set_parent(node, parent) end
 
@@ -65,7 +65,7 @@ function ncine.scenenode.remove_child_at(parent, index) end
 ---Removes all children from the specified parent
 ---@param parent scenenodeObj
 ---@return boolean # `true` if there were at least one node to remove
-function ncine.scenenode.remove_all_children(parent, index) end
+function ncine.scenenode.remove_all_children(parent) end
 
 ---Unlinks a child node from the specified parent
 ---
@@ -119,8 +119,8 @@ function ncine.scenenode.is_enabled(node) end
 
 ---Enables or disables both node updating and drawing
 ---@param node scenenodeObj
----@param newValue boolean
-function ncine.scenenode.set_enabled(node, newValue) end
+---@param enabled boolean
+function ncine.scenenode.set_enabled(node, enabled) end
 
 ---Returns the node position relative to its parent
 ---@param node scenenodeObj

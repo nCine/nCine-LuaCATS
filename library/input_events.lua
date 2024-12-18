@@ -33,6 +33,7 @@ pointer = {}
 ---@field pointers pointer[]
 touch_event = {}
 
+---Table with information about an accelerometer event
 ---@class accelerometer_event
 ---@field x number
 ---@field y number

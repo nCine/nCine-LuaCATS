@@ -7,7 +7,7 @@
 ---@class ncine.sprite: ncine.base_sprite
 ncine.sprite = {}
 
----Constructs a sprite object with a parent scene node, a texture, and position components
+---Constructs a sprite object with a parent scene node, a texture, and position components.
 ---
 ---Don't forget to call [delete](lua://ncine.sprite.delete) when you are done with it!
 ---@param parent? scenenodeObj # The parent scenenode
@@ -18,7 +18,7 @@ ncine.sprite = {}
 ---@nodiscard
 function ncine.sprite.new(parent, texture, x, y) end
 
----Constructs a sprite object with a parent scene node, a texture, and a position vector
+---Constructs a sprite object with a parent scene node, a texture, and a position vector.
 ---
 ---Don't forget to call [delete](lua://ncine.sprite.delete) when you are done with it!
 ---@param parent? scenenodeObj # The parent scenenode
@@ -28,7 +28,7 @@ function ncine.sprite.new(parent, texture, x, y) end
 ---@nodiscard
 function ncine.sprite.new(parent, texture, pos) end
 
----Constructs a new sprite object as a clone of the specified one
+---Constructs a new sprite object as a clone of the specified one.
 ---
 ---Don't forget to call [delete](lua://ncine.sprite.delete) when you are done with it!
 ---@param sprite spriteObj # The sprite object to be cloned

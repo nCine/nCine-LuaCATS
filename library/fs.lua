@@ -10,7 +10,7 @@
 ---@field minute integer
 ---@field second integer
 
----file and directory permission modes
+---File and directory permission modes
 ---@enum ncine.permission
 ncine.permission = {
 	READ = 0,

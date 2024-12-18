@@ -40,7 +40,7 @@ ncine.shader_default_fragment = {
 ---@class ncine.shader
 ncine.shader = {}
 
----Constructs a shader object
+---Constructs a shader object.
 ---
 ---Don't forget to call [delete](lua://ncine.shader.delete) when you are done with it!
 ---@return shaderObj # A new shader object
@@ -60,7 +60,7 @@ function ncine.shader.delete(shader) end
 ---@return boolean # True if the shader program has been successfully linked
 function ncine.shader.load_from_memory(shader, name, introspection, vertex, fragment) end
 
----Compiles a shader program after loading the fragment shader source from a string
+---Compiles a shader program after loading the fragment shader source from a string.
 ---
 ---The vertex shader is a default one, in this case.
 ---@param shader shaderObj
@@ -71,7 +71,7 @@ function ncine.shader.load_from_memory(shader, name, introspection, vertex, frag
 ---@return boolean # True if the shader program has been successfully linked
 function ncine.shader.load_from_memory_default_vertex(shader, name, introspection, vertex, fragment) end
 
----Compiles a shader program after loading the vertex shader source from a string
+---Compiles a shader program after loading the vertex shader source from a string.
 ---
 ---The fragment shader is a default one, in this case.
 ---@param shader shaderObj
@@ -82,7 +82,7 @@ function ncine.shader.load_from_memory_default_vertex(shader, name, introspectio
 ---@return boolean # True if the shader program has been successfully linked
 function ncine.shader.load_from_memory_default_fragment(shader, name, introspection, vertex, fragment) end
 
----Compiles a shader program after loading shader sources from strings
+---Compiles a shader program after loading shader sources from strings.
 ---
 ---In this case custom hashes can be passed to the function.
 ---@param shader shaderObj
@@ -104,9 +104,9 @@ function ncine.shader.load_from_memory_with_hashes(shader, name, introspection, 
 ---@return boolean # True if the shader program has been successfully linked
 function ncine.shader.load_from_file(shader, name, introspection, vertex, fragment) end
 
----Compiles a shader program after loading the fragment shader source from a file
+---Compiles a shader program after loading the fragment shader source from a file.
 ---
----The vertex shader is a default one, in this case.
+---In this case the vertex shader is a default one.
 ---@param shader shaderObj
 ---@param name string # The name of the shader
 ---@param introspection ncine.shader_introspection
@@ -115,9 +115,9 @@ function ncine.shader.load_from_file(shader, name, introspection, vertex, fragme
 ---@return boolean # True if the shader program has been successfully linked
 function ncine.shader.load_from_file_default_vertex(shader, name, introspection, vertex, fragment) end
 
----Compiles a shader program after loading the vertex shader source from a file
+---Compiles a shader program after loading the vertex shader source from a file.
 ---
----The fragment shader is a default one, in this case.
+---In this case the fragment shader is a default one.
 ---@param shader shaderObj
 ---@param name string # The name of the shader
 ---@param introspection ncine.shader_introspection
@@ -154,7 +154,7 @@ function ncine.shader.retrieve_infolog(shader) end
 ---@return boolean
 function ncine.shader.get_log_on_errors(shader) end
 
----Sets the automatic log on errors flag
+---Sets the automatic log on errors flag.
 ---
 ---If the flag is set to `true`, the shader will automatically log compilation and linking errors.
 ---@param shader shaderObj

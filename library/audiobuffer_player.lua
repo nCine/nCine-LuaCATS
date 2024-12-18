@@ -7,7 +7,7 @@
 ---@class ncine.audiobuffer_player: ncine.audio_player
 ncine.audiobuffer_player = {}
 
----Constructs an audio buffer player object from an audio buffer
+---Constructs an audio buffer player object from an audio buffer.
 ---
 ---Don't forget to call [delete](lua://ncine.audiobuffer_player.delete) when you are done with it!
 ---@param buffer audiobufferObj

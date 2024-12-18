@@ -7,7 +7,7 @@
 ---@class ncine.audio_effect_properties
 ncine.audio_effect_properties = {}
 
----Constructs an audio effect properties object
+---Constructs an audio effect properties object.
 ---
 ---Don't forget to call [delete](lua://ncine.audio_effect_properties.delete) when you are done with it!
 ---@return audioeffectpropertiesObj # A new audio effect properties object

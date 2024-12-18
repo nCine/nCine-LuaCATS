@@ -7,7 +7,7 @@
 ---@class ncine.audiostream_player: ncine.audio_player
 ncine.audiostream_player = {}
 
----Constructs an audio stream player object from an audio file
+---Constructs an audio stream player object from an audio file.
 ---
 ---Don't forget to call [delete](lua://ncine.audiostream_player.delete) when you are done with it!
 ---@param filename string # The path to an audio file
