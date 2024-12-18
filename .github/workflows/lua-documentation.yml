@@ -24,7 +24,7 @@ jobs:
         tar xvpzf lua-language-server-$LUALS_VERSION-linux-x64.tar.gz -C ../lua-language-server-$LUALS_VERSION-linux-x64
         rm lua-language-server-$LUALS_VERSION-linux-x64.tar.gz
 
-    - name: 'Export Documentation'
+    - name: 'Export Documentation with LuaLS'
       run: |
         cd ../lua-language-server-$LUALS_VERSION-linux-x64
         mkdir docs
@@ -37,6 +37,9 @@ jobs:
         input_files: '[["nCine_Lua_API.md"]]'
         output_files: '["nCine_Lua_API.html"]'
 
+    - name: 'Generate Documentation with LDoc'
+      uses: lunarmodules/ldoc@v1.5.0
+
     - name: 'Push Documentation'
       env:
         PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
@@ -48,9 +51,13 @@ jobs:
         git clone https://$PUBLIC_REPO_TOKEN@github.com/nCine/docs.git >/dev/null 2>&1
         cd docs
 
-        git rm lua_api_${BRANCH_NAME}.html
+        git rm lua_api_${BRANCH_NAME}.html || true
         cp -p ../nCine_Lua_API.html lua_api_${BRANCH_NAME}.html
         git add lua_api_${BRANCH_NAME}.html
+
+        git rm -r lua_${BRANCH_NAME} || true
+        cp -Rp ../doc lua_${BRANCH_NAME}
+        git add lua_${BRANCH_NAME}
 
         git commit --amend -m "Initial commit" || git commit -m "Initial commit"
         git push --force || git push --set-upstream origin master
