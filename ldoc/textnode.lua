@@ -110,6 +110,16 @@ function ncine.textnode.get_abslineheight(textnode) end
 ---@tparam number line_height
 function ncine.textnode.set_lineheight(textnode, line_height) end
 
+---Gets the size of a "tab" character in terms of whitespaces
+---@tparam textnodeObj textnode
+---@treturn integer
+function ncine.textnode.get_tabsize(textnode) end
+
+---Sets the size of a "tab" character in terms of whitespaces
+---@tparam textnodeObj textnode
+---@tparam integer tab_size
+function ncine.textnode.set_tabsize(textnode, tab_size) end
+
 ---Returns the string to render
 ---@tparam textnodeObj textnode
 ---@treturn string
@@ -120,9 +130,10 @@ function ncine.textnode.get_string(textnode) end
 ---@tparam string string
 function ncine.textnode.set_string(textnode, string) end
 
----Calculates the rectangle boundaries needed to render the provided string with the specified font
+---Calculates the rectangle boundaries needed to render the provided string with the specified font, kerning state, and tab size
 ---@tparam ncine.font.fontObj font
 ---@tparam boolean with_kerning
+---@tparam integer tab_size
 ---@tparam string string
 ---@treturn ncine.vec2
-function ncine.textnode.calculate_boundaries(font, with_kerning, string) end
+function ncine.textnode.calculate_boundaries(font, with_kerning, tab_size, string) end
