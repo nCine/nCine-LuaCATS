@@ -119,11 +119,23 @@ function ncine.input.set_mouse_cursor_mode(mouse_cursor_mode) end
 
 -- Defined in `LuaKeyboardEvents.cpp`
 
----Returns `true` if the specified key is down
+---Returns `true` if the specified key is down this frame
 ---@param key_state keystateObj
 ---@param keysym integer
 ---@return boolean
-function ncine.input.key_down(key_state, keysym) end
+function ncine.input.is_key_down(key_state, keysym) end
+
+---Returns `true` if the specified key went from not down to down this frame
+---@param key_state keystateObj
+---@param keysym integer
+---@return boolean
+function ncine.input.is_key_pressed(key_state, keysym) end
+
+---Returns `true` if the specified key went from down to not down this frame
+---@param key_state keystateObj
+---@param keysym integer
+---@return boolean
+function ncine.input.is_key_released(key_state, keysym) end
 
 -- Defined in `LuaJoystickEvents.cpp`
 
