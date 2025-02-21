@@ -69,8 +69,10 @@ function ncine.application.get_screen_viewport() end
 function ncine.application.get_num_frames() end
 
 ---Returns the time in seconds that last frame took to complete
+---
+---Also called delta time.
 ---@return number
-function ncine.application.get_interval() end
+function ncine.application.get_frame_time() end
 
 ---Returns the drawable screen width
 ---@return number
