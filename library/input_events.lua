@@ -45,9 +45,9 @@ accelerometer_event = {}
 ncine.mouse_button = {
 	LEFT = 0,
 	MIDDLE = 1,
-	RIGHT = 3,
-	FOURTH = 4,
-	FIFTH = 5,
+	RIGHT = 2,
+	FOURTH = 3,
+	FIFTH = 4,
 }
 
 ---Table with information about a mouse event
@@ -101,27 +101,27 @@ joy_axis_event = {}
 ---Joystick button names
 ---@enum ncine.joy_button
 ncine.joy_button = {
-	UNKNOWN = 0,
-	A = 1,
-	B = 3,
-	X = 4,
-	Y = 5,
-	BACK = 6,
-	GUIDE = 7,
-	START = 8,
-	LSTICK = 9,
-	RSTICK = 10,
-	LBUMPER = 11,
-	RBUMPER = 12,
-	DPAD_UP = 13,
-	DPAD_DOWN = 14,
-	DPAD_LEFT = 15,
-	DPAD_RIGHT = 16,
-	MISC1 = 17,
-	PADDLE1 = 18,
-	PADDLE2 = 19,
-	PADDLE3 = 20,
-	PADDLE4 = 21,
+	UNKNOWN = -1,
+	A = 0,
+	B = 1,
+	X = 2,
+	Y = 3,
+	BACK = 4,
+	GUIDE = 5,
+	START = 6,
+	LSTICK = 7,
+	RSTICK = 8,
+	LBUMPER = 9,
+	RBUMPER = 10,
+	DPAD_UP = 11,
+	DPAD_DOWN = 12,
+	DPAD_LEFT = 13,
+	DPAD_RIGHT = 14,
+	MISC1 = 15,
+	PADDLE1 = 16,
+	PADDLE2 = 17,
+	PADDLE3 = 18,
+	PADDLE4 = 19,
 }
 
 ---Table with information about a joystick mapped button event
@@ -133,12 +133,13 @@ joy_mapped_button_event = {}
 ---Joystick axis names
 ---@enum ncine.joy_axis
 ncine.joy_axis = {
+	UNKNOWN = -1,
 	LX = 0,
 	LY = 1,
-	RX = 3,
-	RY = 4,
-	LTRIGGER = 5,
-	RTRIGGER = 6,
+	RX = 2,
+	RY = 3,
+	LTRIGGER = 4,
+	RTRIGGER = 5,
 }
 
 ---Table with information about a joystick mapped axis event

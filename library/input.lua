@@ -1,5 +1,8 @@
 ---@meta
 
+---The light user data of a mouse state object
+---@class mousestateObj: lightuserdata
+
 ---The light user data of a keyboard state object
 ---@class keystateObj: lightuserdata
 
@@ -10,14 +13,16 @@
 ---@class joymappedstateObj: lightuserdata
 
 ---Table with information about the mouse state
+---
+---Only used in the `on_mouse_moved()` callback event.
 ---@class mouse_state
 ---@field x integer # Pointer position on the X axis
 ---@field y integer # Pointer position on the Y axis
----@field left_pressed boolean # It is `true` if the left mouse button is pressed
----@field middle_pressed boolean # It is `true` if the middle mouse button is pressed
----@field right_pressed boolean # It is `true` if the right mouse button is pressed
----@field fourth_pressed boolean # It is `true` if the fourth mouse button is pressed
----@field fifth_pressed boolean # It is `true` if the fifth mouse button is pressed
+---@field is_left_down boolean # It is `true` if the left mouse button is down
+---@field is_middle_down boolean # It is `true` if the middle mouse button is down
+---@field is_right_down boolean # It is `true` if the right mouse button is down
+---@field is_fourth_down boolean # It is `true` if the fourth mouse button is down
+---@field is_fifth_down boolean # It is `true` if the fifth mouse button is down
 mouse_state = {}
 
 ---Mouse cursor modes
@@ -42,7 +47,7 @@ ncine.joy_dead_zone = {
 ncine.input = {}
 
 ---Returns current mouse state
----@return mouse_state
+---@return mousestateObj
 function ncine.input.mouse_state() end
 
 ---Returns current keyboard state
@@ -52,7 +57,7 @@ function ncine.input.key_state() end
 ---Returns `true` if the specified joystick is connected
 ---@param joy_id integer
 ---@return boolean
-function ncine.input.joy_present(joy_id) end
+function ncine.input.is_joy_present(joy_id) end
 
 ---Returns the name of the specified joystick
 ---@param joy_id integer
@@ -86,7 +91,7 @@ function ncine.input.joy_state() end
 ---Returns `true` if the joystick has a valid mapping configuration
 ---@param joy_id integer
 ---@return boolean
-function ncine.input.joy_mapped(joy_id) end
+function ncine.input.is_joy_mapped(joy_id) end
 
 ---Returns the state of the mapped joystick
 ---@return joymappedstateObj
@@ -117,6 +122,26 @@ function ncine.input.get_mouse_cursor_mode(joy_id) end
 ---@param mouse_cursor_mode ncine.mouse_cursor_mode
 function ncine.input.set_mouse_cursor_mode(mouse_cursor_mode) end
 
+-- Defined in `LuaMouseEvents.cpp`
+
+---Returns `true` if the specified mouse button is down this frame
+---@param mouse_state mousestateObj
+---@param button ncine.mouse_button
+---@return boolean
+function ncine.input.is_mouse_button_down(mouse_state, button) end
+
+---Returns `true` if the specified mouse button went from not down to down this frame
+---@param mouse_state mousestateObj
+---@param button ncine.mouse_button
+---@return boolean
+function ncine.input.is_mouse_button_pressed(mouse_state, button) end
+
+---Returns `true` if the specified mouse button went from down to not down this frame
+---@param mouse_state mousestateObj
+---@param button ncine.mouse_button
+---@return boolean
+function ncine.input.is_mouse_button_released(mouse_state, button) end
+
 -- Defined in `LuaKeyboardEvents.cpp`
 
 ---Returns `true` if the specified key is down this frame
@@ -139,17 +164,41 @@ function ncine.input.is_key_released(key_state, keysym) end
 
 -- Defined in `LuaJoystickEvents.cpp`
 
----Returns `true` if the specified joystick button is pressed
+---Returns `true` if the specified joystick button is down this frame
 ---@param joystick_state joystickstateObj
 ---@param button_id integer
 ---@return boolean
-function ncine.input.joy_button_pressed(joystick_state, button_id) end
+function ncine.input.is_joy_button_down(joystick_state, button_id) end
 
----Returns `true` if the specified mapped joystick button is pressed
+---Returns `true` if the specified joystick button went from not down to down this frame
+---@param joystick_state joystickstateObj
+---@param button_id integer
+---@return boolean
+function ncine.input.is_joy_button_pressed(joystick_state, button_id) end
+
+---Returns `true` if the specified joystick button went from down to not down this frame
+---@param joystick_state joystickstateObj
+---@param button_id integer
+---@return boolean
+function ncine.input.is_joy_button_released(joystick_state, button_id) end
+
+---Returns `true` if the specified mapped joystick button is down this frame
 ---@param joystick_state joymappedstateObj
 ---@param button_name ncine.joy_button
 ---@return boolean
-function ncine.input.joy_button_pressed(joystick_state, button_name) end
+function ncine.input.is_joy_button_down(joystick_state, button_name) end
+
+---Returns `true` if the specified mapped joystick button went from not down to down this frame
+---@param joystick_state joymappedstateObj
+---@param button_name ncine.joy_button
+---@return boolean
+function ncine.input.is_joy_button_pressed(joystick_state, button_name) end
+
+---Returns `true` if the specified mapped joystick button went from down to not down this frame
+---@param joystick_state joymappedstateObj
+---@param button_name ncine.joy_button
+---@return boolean
+function ncine.input.is_joy_button_released(joystick_state, button_name) end
 
 ---Returns the state of the specified hat
 ---@param joystick_state joystickstateObj

@@ -9,12 +9,14 @@ ncine.frame_timer = {}
 function ncine.frame_timer.total_number_frames() end
 
 ---Returns the time in seconds that last frame took to complete
+---
+---Also called delta time.
 ---@return number
-function ncine.frame_timer.last_frame_duration() end
+function ncine.frame_timer.last_frame_time() end
 
 ---Returns the elapsed time in seconds since current frame started
 ---@return number
-function ncine.frame_timer.current_frame_duration() end
+function ncine.frame_timer.current_frame_time() end
 
 ---Returns the average FPS during the update interval
 ---@return number
