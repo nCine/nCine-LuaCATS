@@ -41,6 +41,11 @@ ncine.joy_dead_zone = {
 	TRIGGER = 30 / 32767.0,
 }
 
+---The maximum vibration value supported by the backend (65535 on SDL2 and 255 on Android)
+---
+---The reciprocal of this number can be used as the vibration resolution value.
+ncine.joy_max_vibration_value = 65535;
+
 ---Returns current mouse state
 ---@treturn mousestateObj
 function ncine.input.mouse_state() end
@@ -90,7 +95,7 @@ function ncine.input.is_joy_mapped(joy_id) end
 
 ---Returns the state of the mapped joystick
 ---@treturn joymappedstateObj
-function ncine.input.joymapped_state() end
+function ncine.input.joy_mapped_state() end
 
 ---Modifies the joystick axis vector to account for a dead zone
 ---@tparam ncine.vec2 joy_vector
@@ -108,6 +113,20 @@ function ncine.input.add_joymappings_from_strings(strings) end
 ---Returns the current number of valid joystick mappings
 ---@treturn integer
 function ncine.input.num_joymappings(strings) end
+
+---Returns `true` if the specified joystick supports vibration
+---@tparam integer joy_id
+---@treturn boolean
+function ncine.input.has_joy_vibration(joy_id) end
+
+---Vibrates the low (left) and high (right) frequency motors for the specified number of milliseconds.
+---
+---Intensity goes from 0 to 1. Each call to this function cancels any previous vibration effect, and calling it with zero intensity stops any vibrations.
+---@tparam integer joy_id
+---@tparam number low_freq_intensity An intensity value from 0 to 1 for the low frequency motor (left)
+---@tparam number high_freq_intensity An intensity value from 0 to 1 for the high frequency motor (right)
+---@tparam integer duration A time duration in milliseconds
+function ncine.input.joy_vibrate(joy_id, low_freq_intensity, high_freq_intensity, duration) end
 
 ---Returns current mouse cursor mode
 ---@treturn ncine.mouse_cursor_mode
