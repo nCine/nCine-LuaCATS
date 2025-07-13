@@ -66,6 +66,10 @@ function ncine.fs.logical_drives() end
 ---@treturn string
 function ncine.fs.logical_drive_strings() end
 
+---Returns the path of the directory where the executable resides
+---@treturn string
+function ncine.fs.get_executable_dir() end
+
 ---Returns the path of the current working directory
 ---@treturn string
 function ncine.fs.get_current_dir() end
